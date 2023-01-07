@@ -1,0 +1,134 @@
+/* 공통 */
+body {
+  color: #333333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+img {
+  /* 스타벅스 로그를 인라인 요소에서 블록 요소로 변경 */
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header */
+header {
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+header .inner {
+  width: 1100px;
+  height: 120px;
+  margin: 0 auto;   /*위는 마진 0, 좌우는 오토*/
+  /* background-color: orange; */
+  position: relative;
+}
+
+header .logo {
+  height: 75px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /* display: none; */
+}
+
+header .sub-menu {
+  position: absolute;
+  top: 10;
+  right: 0;
+  margin: auto;
+  display: flex;
+
+}
+
+header .sub-menu ul.menu {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+
+}
+
+header .sub-menu ul.menu li {
+  position: relative;
+}
+
+/* sub-menu 사이의 영역 구분을 위해 표시한 바를 추가하기 위한 내용 */
+header .sub-menu ul.menu li::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+/* sub-menu의 영역 구분을 위해 넣은 bar들 중 첫번째 bar를 보이지 않게 하기 위해 first-child를 사용하여 안보이게 처리 */
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
+}
+
+header .sub-menu ul.menu li a {
+  /* background-color: white; */
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #656565;
+
+}
+
+header .sub-menu ul.menu li a:hover {
+  color: #000000;
+}
+
+header .sub-menu .search {
+  /* background-color: red; */
+  height: 34px;
+  position: relative;
+}
+
+header .sub-menu .search input {
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ffffff;
+  color: #777777;
+  font-size: 12px;
+  transition: width .4s;
+ 
+}
+
+header .sub-menu .search input:focus {
+  width: 190px;
+  border-color: #669900;
+}
+
+header .sub-menu .search .material-icons {
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: .4s;
+}
+
+/* search 아이콘이 포거스되었을때 사라지게 하는 효과 */
+header .sub-menu .search.focused .material-icons {
+  opacity: 0;
+
+}
+
